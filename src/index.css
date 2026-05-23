@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Bree+Serif&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@100..900&family=Pacifico&family=Playwrite+DE+SAS:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #212529;
+  --secondary-bg-color: #2b3035;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  background-color: var(--bg-color);
+}
+

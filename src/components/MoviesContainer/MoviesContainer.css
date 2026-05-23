@@ -1,0 +1,22 @@
+.moviesNotFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #b3b3b3;
+    gap: 10px;
+    margin-block: 80px 65px;
+}
+.moviesNotFound img {
+    width: 45px;
+}
+.message-info {
+    margin-top: 7px;
+}
+.message-info p {
+    margin-top: 10px;
+    width: 82%;
+    max-width: 530px;
+    margin-inline: auto;
+    line-height: 1.4;
+}

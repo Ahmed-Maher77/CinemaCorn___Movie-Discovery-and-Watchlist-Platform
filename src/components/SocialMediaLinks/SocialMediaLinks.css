@@ -1,0 +1,15 @@
+.socialMediaLinks {
+    display: flex;
+    gap: clamp(5px, 2vw, 20px);
+}
+.socialMediaLinks li a {
+    display: block;
+    transition: transform 0.3s ease;
+}
+.socialMediaLinks li a:hover {
+    transform: rotate(360deg);
+}
+.socialMediaLinks li a img {
+    width: 30px;
+    height: 30px;
+}
