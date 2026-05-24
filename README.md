@@ -21,6 +21,8 @@ If you are developing a production application, we recommend using TypeScript wi
 
 This project is configured for Netlify with `netlify.toml`.
 
+- Live site: https://cinemacorn-movie-discovery.netlify.app
+
 - Build command: `npm run build`
 - Publish directory: `dist`
 - SPA fallback: all routes redirect to `index.html`
