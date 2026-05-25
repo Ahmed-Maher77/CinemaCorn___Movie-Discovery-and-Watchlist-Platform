@@ -7,12 +7,42 @@ a {
     text-decoration: none;
 }
 
+.homePage {
+    min-height: calc(100vh - 52px);
+}
+
 .container {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+/* Search container and actions layout */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    max-width: 700px;
+    flex-direction: row-reverse;
+}
+
+@media (min-width: 992px) {
+    .search-container {
+        flex-direction: column;
+    }
+    .search-actions {
+        max-width: 650px;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up) */
