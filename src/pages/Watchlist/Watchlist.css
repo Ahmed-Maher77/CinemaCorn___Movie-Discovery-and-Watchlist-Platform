@@ -1,0 +1,368 @@
+.watchlistPage {
+    min-height: calc(100vh - 52px);
+}
+
+.watchlistContainer {
+    margin-block: 24px 56px;
+}
+
+.watchlistStats {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 40px;
+    margin-top: 35px;
+}
+
+.watchlistStat {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: rgb(84 84 84 / 3%);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 0px 24px rgb(28 28 28 / 12%);
+    backdrop-filter: blur(10px);
+}
+
+.watchlistStat::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04),
+        transparent 45%
+    );
+    pointer-events: none;
+}
+
+.watchlistStatIcon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #6ec6ff;
+    background: none;
+    opacity: 0.22;
+    flex: none;
+    pointer-events: none;
+}
+
+.watchlistStat:nth-child(1) .watchlistStatIcon {
+    color: #6ec6ff;
+}
+
+.watchlistStat:nth-child(2) .watchlistStatIcon {
+    color: #ffd166;
+}
+
+.watchlistStat:nth-child(3) .watchlistStatIcon {
+    color: #8ce99a;
+}
+
+.watchlistStat:nth-child(4) .watchlistStatIcon {
+    color: #f78da7;
+}
+
+.watchlistStatIcon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.watchlistStatIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    opacity: 0.95;
+}
+
+.watchlistStatContent {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-left: 55px;
+}
+
+.watchlistStatValue {
+    color: #ffffff;
+    font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+    line-height: 1;
+    font-weight: 700;
+}
+
+.watchlistStatLabel {
+    color: #aeb7c4;
+    font-size: 0.92rem;
+    line-height: 1.2;
+}
+
+.watchlistIntro {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.watchlistEyebrow {
+    color: #aeb7c4;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.watchlistIntro h1 {
+    color: #fff;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.watchlistIntro p {
+    color: #c9ced7;
+    max-width: 60ch;
+}
+
+.watchlistIntroActions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.watchlistHomeLink,
+.watchlistEmptyLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    color: #1e90ff;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.watchlistHomeLink:hover,
+.watchlistEmptyLink:hover {
+    opacity: 0.8;
+}
+
+.watchlistHomeLink img,
+.watchlistEmptyLink img {
+    width: 18px;
+    transition: transform 0.3s ease;
+}
+
+.watchlistHomeLink:hover img,
+.watchlistEmptyLink:hover img {
+    transform: rotate(45deg);
+}
+
+.watchlistState {
+    color: #c9ced7;
+    margin-top: 16px;
+}
+
+.watchlistState.error {
+    color: #ff9a9a;
+}
+
+.watchlistEmpty {
+    margin: 100px auto 10px;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.watchlistEmpty h2 {
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.watchlistEmptyIcon {
+    display: block;
+    width: 58px;
+    height: auto;
+    margin: 0 auto 12px;
+}
+
+@media (min-width: 900px) {
+    .watchlistEmptyIcon {
+        width: 58px;
+    }
+}
+
+.watchlistEmpty p {
+    color: #c9ced7;
+    max-width: 56ch;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.watchlistEmptyLink {
+    margin-top: 8px;
+}
+
+.watchlistGrid {
+    display: grid;
+    gap: 18px;
+}
+
+.watchlistGrid--grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.watchlistGrid--list {
+    grid-template-columns: 1fr;
+}
+
+.watchlistCard {
+    position: relative;
+}
+
+.watchlistGrid--grid .watchlistCard {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    margin: 0;
+    padding: 14px;
+    padding-bottom: 15px;
+}
+
+.watchlistGrid--grid .watchlistCard .movieCard-poster {
+    width: 100%;
+    height: 210px;
+    flex: none;
+    border-radius: 12px;
+}
+
+.watchlistGrid--grid .watchlistCard .movieCard-content {
+    gap: 15px;
+}
+
+.watchlistGrid--grid .watchlistCardActions {
+    align-items: center;
+}
+
+.watchlistGrid--list .watchlistCard {
+    width: 100%;
+}
+
+.watchlistCardActions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.watchlistCardRating {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.watchlistCardRating img {
+    width: 19px;
+}
+
+.watchlistActionsRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.watchlistViewLink {
+    color: #1e90ff;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.watchlistViewLink img {
+    width: 18px;
+    transition: transform 0.3s ease;
+}
+
+.watchlistViewLink:hover {
+    opacity: 0.8;
+}
+
+.watchlistViewLink:hover img {
+    transform: rotate(45deg);
+}
+
+.watchlistRemoveButton {
+    border: 1px solid rgba(255, 122, 162, 0.24);
+    background: rgba(255, 80, 129, 0.12);
+    color: #ffb8cb;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease;
+}
+
+.watchlistRemoveButton:hover {
+    background: rgba(255, 80, 129, 0.18);
+}
+
+@media (max-width: 640px) {
+    .watchlistContainer {
+        margin-block: 20px 48px;
+    }
+
+    .watchlistEmpty {
+        padding: 22px;
+    }
+
+    .watchlistIntroActions {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .watchlistGrid--grid {
+        grid-template-columns: 1fr;
+    }
+
+    .watchlistGrid--grid .watchlistCard {
+        padding: 18px;
+    }
+}
+
+@media (min-width: 576px) {
+    .watchlistStats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .watchlistStats {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+}
