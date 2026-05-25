@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import MovieCardInfo from "../../../components/MoviesContainer/MovieCardInfo/MovieCardInfo";
 import MovieCardPoster from "../../../components/MoviesContainer/MovieCardPoster/MovieCardPoster";
@@ -59,6 +60,12 @@ const WatchlistMovieCard = ({ movie, onRemove, viewMode }) => {
             </div>
         </article>
     );
+};
+
+WatchlistMovieCard.propTypes = {
+    movie: PropTypes.object.isRequired,
+    onRemove: PropTypes.func.isRequired,
+    viewMode: PropTypes.string.isRequired,
 };
 
 export default WatchlistMovieCard;

@@ -1,46 +1,27 @@
-import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+import useWatchlistState from "../../../hooks/useWatchlistState";
 
 const WatchlistButton = ({ movie }) => {
-    const [inWatchlist, setInWatchlist] = useState(false);
+    const { inWatchlist, toggleWatchlist: toggleWatchlistState } =
+        useWatchlistState(movie.id);
     const [toast, setToast] = useState(null);
     const [toastType, setToastType] = useState("success");
 
-    useEffect(() => {
-        try {
-            const raw = localStorage.getItem("watchlist");
-            const list = raw ? JSON.parse(raw) : [];
-            setInWatchlist(list.includes(movie.id));
-        } catch (e) {
-            setInWatchlist(false);
-        }
-    }, [movie.id]);
-
     const toggleWatchlist = () => {
-        try {
-            const raw = localStorage.getItem("watchlist");
-            const list = raw ? JSON.parse(raw) : [];
+        const result = toggleWatchlistState();
 
-            const exists = list.includes(movie.id);
-            let newList;
-            if (exists) {
-                newList = list.filter((i) => i !== movie.id);
-                setToast("Removed from watchlist");
-                setToastType("success");
-            } else {
-                newList = [...list, movie.id];
-                setToast("Added to watchlist");
-                setToastType("success");
-            }
-
-            localStorage.setItem("watchlist", JSON.stringify(newList));
-            setInWatchlist(!exists);
-
-            window.setTimeout(() => setToast(null), 1800);
-        } catch (e) {
+        if (result.success) {
+            setToast(
+                result.added ? "Added to watchlist" : "Removed from watchlist",
+            );
+            setToastType("success");
+        } else {
             setToast("Watchlist update failed");
             setToastType("error");
-            window.setTimeout(() => setToast(null), 1800);
         }
+
+        window.setTimeout(() => setToast(null), 1800);
     };
 
     return (
@@ -95,6 +76,10 @@ const WatchlistButton = ({ movie }) => {
             )}
         </>
     );
+};
+
+WatchlistButton.propTypes = {
+    movie: PropTypes.object.isRequired,
 };
 
 export default WatchlistButton;
