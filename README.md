@@ -15,7 +15,7 @@ rate movies locally, and share app state through URL-synced navigation.
 ## 👀 Website Preview:
 
 <a href="https://cinemacorn-movie-discovery.netlify.app/" title="demo">
-  <img src="uploaded-img-on-github-readme" alt="website preview - Demo - UI Mockup" width="400">
+  <img src="https://github.com/user-attachments/assets/c4575c3e-fbae-4efc-a25b-67d7d99f4f65" alt="website preview - Demo - UI Mockup" width="400">
 </a>
 
 ---
