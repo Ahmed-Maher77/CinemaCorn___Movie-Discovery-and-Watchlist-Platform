@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import dateRangeIcon from "../../../assets/images/date.svg";
 import "./MovieCardInfo.css";
 
@@ -19,6 +20,12 @@ const MovieCardInfo = ({ title, releaseYear, overview }) => {
             </p>
         </div>
     );
+};
+
+MovieCardInfo.propTypes = {
+    title: PropTypes.string.isRequired,
+    releaseYear: PropTypes.string.isRequired,
+    overview: PropTypes.string,
 };
 
 export default MovieCardInfo;

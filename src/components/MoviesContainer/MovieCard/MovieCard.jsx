@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import MovieCardFooter from "../MovieCardFooter/MovieCardFooter";
 import MovieCardInfo from "../MovieCardInfo/MovieCardInfo";
 import MovieCardPoster from "../MovieCardPoster/MovieCardPoster";
@@ -18,7 +19,7 @@ const MovieCard = ({
 
     return (
         <article className="movieCard">
-          {/* ======= poster ======= */}
+            {/* ======= poster ======= */}
             <MovieCardPoster posterUrl={posterUrl} title={title} id={id} />
 
             {/* ======= info & rating ======= */}
@@ -34,6 +35,15 @@ const MovieCard = ({
             </div>
         </article>
     );
+};
+
+MovieCard.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string,
+    vote_average: PropTypes.number,
+    poster_path: PropTypes.string,
+    overview: PropTypes.string,
 };
 
 export default MovieCard;

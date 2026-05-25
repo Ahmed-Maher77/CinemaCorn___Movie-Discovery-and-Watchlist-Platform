@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./ViewToggle.css";
 
 const ViewToggle = ({ viewMode, onViewChange }) => {
@@ -98,6 +99,11 @@ const ViewToggle = ({ viewMode, onViewChange }) => {
             </button>
         </div>
     );
+};
+
+ViewToggle.propTypes = {
+    viewMode: PropTypes.string.isRequired,
+    onViewChange: PropTypes.func.isRequired,
 };
 
 export default ViewToggle;
