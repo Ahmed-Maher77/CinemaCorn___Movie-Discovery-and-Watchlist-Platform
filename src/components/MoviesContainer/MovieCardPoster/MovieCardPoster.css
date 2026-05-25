@@ -1,0 +1,86 @@
+.movieCard-poster {
+    position: relative;
+    flex: 0 0 140px;
+    width: 140px;
+    height: 190px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #1b1f24;
+}
+
+.movieCard-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.movieCard-placeholder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: #a4aab3;
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 12px;
+}
+
+.movieCard-poster-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(
+        180deg,
+        rgb(2 6 16 / 31%) 20%,
+        rgb(2 6 16 / 77%) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.movieCard-poster-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(2px);
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    transform: translateY(8px) scale(0.88);
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease;
+}
+
+.movieCard-poster-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.movieCard-poster:hover .movieCard-poster-overlay,
+.movieCard-poster:focus-within .movieCard-poster-overlay {
+    opacity: 1;
+}
+
+.movieCard-poster:hover .movieCard-poster-icon,
+.movieCard-poster:focus-within .movieCard-poster-icon {
+    transform: translateY(0) scale(1);
+    background-color: rgba(0, 80, 167, 0.85);
+}
+
+.movieCard-poster:hover img,
+.movieCard-poster:focus-within img {
+    transform: scale(1.04);
+}
+
+@media (max-width: 640px) {
+    .movieCard-poster {
+        width: 100%;
+        height: 250px;
+        flex-basis: auto;
+    }
+}
