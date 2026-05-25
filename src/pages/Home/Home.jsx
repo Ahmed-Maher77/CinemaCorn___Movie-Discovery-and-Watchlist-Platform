@@ -3,6 +3,8 @@ import HomeSearch from "../../components/HomeSearch/HomeSearch";
 import HomeResults from "../../components/HomeResults/HomeResults";
 import useMovieSearchControls from "../../hooks/useMovieSearchControls";
 import useFetchMovies from "../../hooks/useFetchMovies";
+import useDebounce from "../../hooks/useDebounce";
+
 
 const Home = () => {
     const {
@@ -13,8 +15,9 @@ const Home = () => {
         handlePageChange,
         handleViewChange,
     } = useMovieSearchControls();
+    const debouncedValue = useDebounce(searchQuery);
     const { moviesData, isLoading, error, totalPages, totalResultsNum } =
-        useFetchMovies({ searchQuery, currentPage });
+        useFetchMovies({ searchQuery: debouncedValue, currentPage });
 
     return (
         <div className="homePage">
