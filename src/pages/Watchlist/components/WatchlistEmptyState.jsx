@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import arrowIcon from "../../../assets/images/arrow-up-right.svg";
 import notFoundIcon from "../../../assets/images/notFound-icon.svg";
@@ -23,5 +24,7 @@ const WatchlistEmptyState = () => {
         </div>
     );
 };
+
+WatchlistEmptyState.propTypes = {};
 
 export default WatchlistEmptyState;
