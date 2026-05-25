@@ -6,9 +6,12 @@ import "./SearchBar.css";
 const SearchBar = ({ searchQuery, handleChange }) => {
     return (
         <div className="searchBar">
+            {/* ======= search input ======= */}
             <label htmlFor="movies-search">
                 <img src={searchIcon} alt="Search" />
             </label>
+
+            {/* ======= input ======= */}
             <input
                 type="text"
                 name="movies-search"
@@ -17,8 +20,12 @@ const SearchBar = ({ searchQuery, handleChange }) => {
                 value={searchQuery}
                 onChange={handleChange}
             />
+
+            {/* ======= clear button ======= */}
             {searchQuery && (
-                <img className="clear-icon" src={xIcon} alt="Clear" />
+                <button type="button" className="clear-icon" onClick={() => handleChange({ target: { value: "" } })}>
+                    <img src={xIcon} alt="Clear" />
+                </button>
             )}
         </div>
     );
