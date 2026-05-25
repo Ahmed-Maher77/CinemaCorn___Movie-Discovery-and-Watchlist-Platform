@@ -1,10 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import NotFound from "./pages/NotFound/NotFound";
+import React, { Suspense } from "react";
 import Layout from "./pages/Layout";
-import MovieDetails from "./pages/MovieDetails/MovieDetails";
-import Watchlist from "./pages/Watchlist/Watchlist";
-import Favorites from "./pages/Favorites/Favorites";
+import Home from "./pages/Home/Home";
+import GlobalInitialLoader from "./components/GlobalInitialLoader/GlobalInitialLoader";
+
+const NotFound = React.lazy(() => import("./pages/NotFound/NotFound"));
+const MovieDetails = React.lazy(
+    () => import("./pages/MovieDetails/MovieDetails"),
+);
+const Watchlist = React.lazy(() => import("./pages/Watchlist/Watchlist"));
+const Favorites = React.lazy(() => import("./pages/Favorites/Favorites"));
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -13,20 +18,44 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             {
-                element: <Home />,
+                element: (
+                    <Suspense fallback={<GlobalInitialLoader />}>
+                        <Home />
+                    </Suspense>
+                ),
                 index: true,
             },
             {
                 path: "/movies/:id",
-                element: <MovieDetails />,
+                element: (
+                    <Suspense fallback={<GlobalInitialLoader />}>
+                        <MovieDetails />
+                    </Suspense>
+                ),
             },
             {
                 path: "/watchlist",
-                element: <Watchlist />,
+                element: (
+                    <Suspense fallback={<GlobalInitialLoader />}>
+                        <Watchlist />
+                    </Suspense>
+                ),
+            },
+            {
+                path: "/favorites",
+                element: (
+                    <Suspense fallback={<GlobalInitialLoader />}>
+                        <Favorites />
+                    </Suspense>
+                ),
             },
             {
                 path: "*",
-                element: <NotFound />,
+                element: (
+                    <Suspense fallback={<GlobalInitialLoader />}>
+                        <NotFound />
+                    </Suspense>
+                ),
             },
         ],
     },
