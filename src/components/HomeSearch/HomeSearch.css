@@ -15,7 +15,7 @@
 }
 
 .results-count {
-    color: #c9ced7;
+    color: var(--color-c9ced7);
 }
 
 @media (min-width: 992px) {

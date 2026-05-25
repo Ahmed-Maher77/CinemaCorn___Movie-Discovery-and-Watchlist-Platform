@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import MoviesContainer from "../../components/MoviesContainer/MoviesContainer";
 import Pagination from "../../components/Pagination/Pagination";
 import "./HomeResults.css";
@@ -32,6 +33,17 @@ const HomeResults = ({
             )}
         </>
     );
+};
+
+HomeResults.propTypes = {
+    moviesData: PropTypes.array,
+    isLoading: PropTypes.bool.isRequired,
+    error: PropTypes.any,
+    viewMode: PropTypes.string.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    totalPages: PropTypes.number.isRequired,
+    totalResultsNum: PropTypes.number.isRequired,
+    handlePageChange: PropTypes.func.isRequired,
 };
 
 export default HomeResults;
