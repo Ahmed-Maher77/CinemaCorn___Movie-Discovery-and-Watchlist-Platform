@@ -1,0 +1,17 @@
+import './GlobalInitialLoader.css'
+
+const GlobalInitialLoader = ({ isExiting = false }) => {
+  return (
+    <div
+      className={`globalInitialLoaderLayer${isExiting ? ' isExiting' : ''}`}
+      role="status"
+      aria-live="polite"
+      aria-label="Loading app"
+    >
+      <div className="globalInitialLoader" />
+      <p className="globalInitialLoaderText">Loading your movie experience...</p>
+    </div>
+  )
+}
+
+export default GlobalInitialLoader
