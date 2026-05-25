@@ -1,12 +1,17 @@
+import PropTypes from "prop-types";
 import "./LoadingMessage.css";
 
 const LoadingMessage = ({ message }) => {
-  return (
-    <div className="loading-message">
-      <p>{message}</p>
-      <div className="loader"></div>
-    </div>
-  )
-}
+    return (
+        <div className="loading-message">
+            <p>{message}</p>
+            <div className="loader"></div>
+        </div>
+    );
+};
 
-export default LoadingMessage
+LoadingMessage.propTypes = {
+    message: PropTypes.string.isRequired,
+};
+
+export default LoadingMessage;
