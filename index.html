@@ -1,13 +1,95 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg" href="/popcorn.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cinemacorn</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/popcorn.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CinemaCorn | Movie Discovery, Watchlist & Ratings</title>
+        <meta
+            name="description"
+            content="CinemaCorn is a modern movie discovery platform where you can search TMDB movies, view rich details, manage a watchlist, rate titles locally, and browse with shareable URL state."
+        />
+        <meta
+            name="keywords"
+            content="CinemaCorn, movie discovery, TMDB, watchlist, movie ratings, React, Vite, Axios, movie search, trailer, localStorage, React Router"
+        />
+        <meta name="author" content="Ahmed Maher" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="theme-color" content="#0b0b0f" />
+
+        <link
+            rel="canonical"
+            href="https://cinemacorn-movie-discovery.netlify.app/"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="CinemaCorn" />
+        <meta
+            property="og:title"
+            content="CinemaCorn | Movie Discovery, Watchlist & Ratings"
+        />
+        <meta
+            property="og:description"
+            content="Search and explore movies from TMDB, save your favorites to a watchlist, and rate them locally with a fast React + Vite experience."
+        />
+        <meta
+            property="og:url"
+            content="https://cinemacorn-movie-discovery.netlify.app/"
+        />
+        <meta
+            property="og:image"
+            content="https://cinemacorn-movie-discovery.netlify.app/popcorn.svg"
+        />
+        <meta property="og:image:alt" content="CinemaCorn popcorn logo" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="CinemaCorn | Movie Discovery, Watchlist & Ratings"
+        />
+        <meta
+            name="twitter:description"
+            content="Discover movies, build your watchlist, and rate what you watch with CinemaCorn."
+        />
+        <meta
+            name="twitter:image"
+            content="https://cinemacorn-movie-discovery.netlify.app/popcorn.svg"
+        />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "CinemaCorn",
+                "applicationCategory": "EntertainmentApplication",
+                "operatingSystem": "Web",
+                "url": "https://cinemacorn-movie-discovery.netlify.app/",
+                "description": "CinemaCorn is a movie discovery and watchlist web app powered by TMDB, built with React and Vite.",
+                "softwareVersion": "1.0.0",
+                "creator": {
+                    "@type": "Person",
+                    "name": "Ahmed Maher"
+                },
+                "keywords": [
+                    "Movie Discovery",
+                    "TMDB",
+                    "Watchlist",
+                    "React",
+                    "Vite",
+                    "Axios",
+                    "React Router"
+                ],
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>
