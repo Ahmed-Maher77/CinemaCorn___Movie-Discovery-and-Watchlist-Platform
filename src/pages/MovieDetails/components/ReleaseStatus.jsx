@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const ReleaseStatus = ({ movie }) => {
@@ -44,6 +45,10 @@ const ReleaseStatus = ({ movie }) => {
             )}
         </div>
     );
+};
+
+ReleaseStatus.propTypes = {
+    movie: PropTypes.object.isRequired,
 };
 
 export default ReleaseStatus;
