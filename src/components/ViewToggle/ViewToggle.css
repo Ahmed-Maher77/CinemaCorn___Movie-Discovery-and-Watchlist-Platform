@@ -1,0 +1,30 @@
+/* View toggle (only show on large screens) */
+.view-toggle {
+    display: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #c9ced7;
+    cursor: pointer;
+}
+
+.view-btn.active {
+    background: rgba(0, 80, 167, 0.12);
+    color: #0050a7;
+}
+
+@media (min-width: 640px) {
+    .view-toggle {
+        display: flex;
+    }
+}

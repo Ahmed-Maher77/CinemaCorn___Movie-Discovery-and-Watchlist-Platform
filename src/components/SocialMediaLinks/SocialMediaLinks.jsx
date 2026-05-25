@@ -14,7 +14,7 @@ const SocialMediaLinks = () => {
         <ul className="socialMediaLinks">
             {socialMediaLinks.map((link) => (
                 <li key={link.name}>
-                    <a href={link.url} target="_blank">
+                    <a href={link.url} target="_blank" rel="noreferrer">
                         <img src={link.icon} alt={link.name} />
                     </a>
                 </li>
