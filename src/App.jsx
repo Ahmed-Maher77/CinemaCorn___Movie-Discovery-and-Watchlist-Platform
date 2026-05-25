@@ -9,7 +9,6 @@ const MovieDetails = React.lazy(
     () => import("./pages/MovieDetails/MovieDetails"),
 );
 const Watchlist = React.lazy(() => import("./pages/Watchlist/Watchlist"));
-const Favorites = React.lazy(() => import("./pages/Favorites/Favorites"));
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -38,14 +37,6 @@ const router = createBrowserRouter([
                 element: (
                     <Suspense fallback={<GlobalInitialLoader />}>
                         <Watchlist />
-                    </Suspense>
-                ),
-            },
-            {
-                path: "/favorites",
-                element: (
-                    <Suspense fallback={<GlobalInitialLoader />}>
-                        <Favorites />
                     </Suspense>
                 ),
             },
