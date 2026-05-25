@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const GenreChips = ({ genres = [] }) => {
@@ -10,6 +11,10 @@ const GenreChips = ({ genres = [] }) => {
             ))}
         </>
     );
+};
+
+GenreChips.propTypes = {
+    genres: PropTypes.array,
 };
 
 export default GenreChips;

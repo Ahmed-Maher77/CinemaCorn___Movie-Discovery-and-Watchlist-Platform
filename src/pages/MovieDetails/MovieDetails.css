@@ -21,10 +21,10 @@
     align-items: center;
     gap: 8px;
     padding: 9px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    border: 1px solid var(--color-rgba-255-255-255-0-16);
     border-radius: 10px;
-    background: transparent;
-    color: #dce2ea;
+    background: var(--color-transparent);
+    color: var(--color-dce2ea);
     cursor: pointer;
 }
 
@@ -41,7 +41,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #9fa6b2;
+    color: var(--color-9fa6b2);
 }
 
 /* Allow breadcrumb to shrink and ellipsize long titles */
@@ -61,7 +61,7 @@
 }
 
 .breadcrumb a {
-    color: #dce2ea;
+    color: var(--color-dce2ea);
     position: relative;
     display: inline-block;
     padding-bottom: 3px;
@@ -88,12 +88,12 @@
 }
 
 .movieDetailsState {
-    color: #c9ced7;
+    color: var(--color-c9ced7);
     margin-top: 24px;
 }
 
 .movieDetailsState.error {
-    color: #ff9a9a;
+    color: var(--color-ff9a9a);
 }
 
 .movieHero {
@@ -103,7 +103,7 @@
     background-position: center;
     overflow: hidden;
     position: relative;
-    /* box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28); */
+    /* box-shadow: 0 16px 30px var(--color-rgba-0-0-0-0-28); */
 }
 
 .movieHeroLayer {
@@ -115,22 +115,22 @@
     padding: 28px;
     background: linear-gradient(
         180deg,
-        rgba(4, 8, 14, 0.15) 12%,
-        rgba(4, 8, 14, 0.86) 68%,
-        rgba(4, 8, 14, 0.96) 100%
+        var(--color-rgba-4-8-14-0-15) 12%,
+        var(--color-rgba-4-8-14-0-86) 68%,
+        var(--color-rgba-4-8-14-0-96) 100%
     );
 }
 
 .movieHeroLabel {
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #aeb7c4;
+    color: var(--color-aeb7c4);
     font-size: 0.78rem;
     margin-bottom: 8px;
 }
 
 .movieHero h1 {
-    color: #ffffff;
+    color: var(--color-ffffff);
     font-size: clamp(1.7rem, 3.2vw, 2.8rem);
     line-height: 1.2;
     margin-bottom: 10px;
@@ -148,22 +148,22 @@
     font-size: 0.82rem;
     border-radius: 999px;
     padding: 5px 10px;
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
+    background: var(--color-rgba-255-255-255-0-15);
+    color: var(--color-fff);
 }
 
 .releaseStatus {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #aeb7c4;
+    color: var(--color-aeb7c4);
     font-size: 0.86rem;
 }
 
 .releaseStatus .releaseIcon {
     width: 14px;
     height: 14px;
-    color: #aecdff;
+    color: var(--color-aecdff);
     flex-shrink: 0;
 }
 
@@ -174,7 +174,7 @@
     left: 22px;
     right: auto;
     z-index: 5;
-    background: transparent;
+    background: var(--color-transparent);
     padding: 4px 6px;
 }
 
@@ -188,8 +188,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    color: #dce2ea;
+    background: var(--color-transparent);
+    color: var(--color-dce2ea);
     border: none;
     cursor: pointer;
     transition:
@@ -208,10 +208,10 @@
 }
 
 .watchlistButtonTop.active {
-    color: #ff7aa2;
-    border-color: rgba(255, 122, 162, 0.28);
+    color: var(--color-ff7aa2);
+    border-color: var(--color-rgba-255-122-162-0-28);
     transform: scale(1.02);
-    box-shadow: 0 6px 18px rgba(255, 122, 162, 0.08);
+    box-shadow: 0 6px 18px var(--color-rgba-255-122-162-0-08);
 }
 
 .watchlistButtonTop.active svg {
@@ -243,14 +243,14 @@
     max-width: min(360px, calc(100vw - 40px));
     padding: 12px 14px;
     border-radius: 14px;
-    border: 1px solid rgba(174, 183, 196, 0.16);
+    border: 1px solid var(--color-rgba-174-183-196-0-16);
     background: linear-gradient(
         145deg,
-        rgba(18, 22, 28, 0.98),
-        rgba(28, 33, 40, 0.98)
+        var(--color-rgba-18-22-28-0-98),
+        var(--color-rgba-28-33-40-0-98)
     );
-    color: #eaf3ff;
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.34);
+    color: var(--color-eaf3ff);
+    box-shadow: 0 14px 30px var(--color-rgba-0-0-0-0-34);
     font-size: 0.94rem;
     line-height: 1.35;
     animation: watchlistToastIn 220ms ease-out;
@@ -261,7 +261,7 @@
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    color: #2de38b;
+    color: var(--color-2de38b);
 }
 
 .watchlistToastIcon svg {
@@ -270,17 +270,61 @@
 }
 
 .watchlistToast.error {
-    color: #ffe0e0;
-    border-color: rgba(255, 122, 162, 0.22);
+    color: var(--color-ffe0e0);
+    border-color: var(--color-rgba-255-122-162-0-22);
     background: linear-gradient(
         145deg,
-        rgba(40, 18, 24, 0.98),
-        rgba(52, 22, 30, 0.98)
+        var(--color-rgba-40-18-24-0-98),
+        var(--color-rgba-52-22-30-0-98)
     );
 }
 
 .watchlistToast.error .watchlistToastIcon {
-    color: #ff6b8d;
+    color: var(--color-ff6b8d);
+}
+
+.starsRating {
+    margin-block: 20px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.starsRating img {
+    width: 25px;
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition:
+        filter 0.2s ease,
+        transform 0.2s ease;
+}
+.starsRating img.active {
+    filter: none;
+}
+.starsRating img.hovered {
+    scale: 1.15;
+    filter: none;
+}
+.starsRating .ratingValue {
+    color: var(--color-aecdff);
+    font-size: 0.9rem;
+    margin-left: 8px;
+    min-width: 32px;
+    text-align: center;
+}
+
+.starsRating .reset-rating {
+    margin-left: 25px;
+    border: none;
+    background: var(--color-transparent);
+    border-bottom: 1px solid var(--color-rgba-255-122-162-0-24);
+    color: var(--color-ffb8cb);
+    cursor: pointer;
+    transition: color 180ms ease;
+}
+
+.starsRating .reset-rating:hover {
+    color: var(--color-rgba-255-122-162-0-8);
 }
 
 @keyframes watchlistToastIn {
@@ -349,7 +393,7 @@
     gap: 6px;
     padding: 0;
     position: relative;
-    color: #d7dee8;
+    color: var(--color-d7dee8);
     font-size: 0.93rem;
 }
 
@@ -357,14 +401,14 @@
     content: "";
     width: 1px;
     height: 12px;
-    background: rgba(174, 183, 196, 0.45);
+    background: var(--color-rgba-174-183-196-0-45);
     margin-left: 8px;
 }
 
 .movieMetaIcon {
     width: 14px;
     height: 14px;
-    color: #aecdff;
+    color: var(--color-aecdff);
     flex-shrink: 0;
 }
 
@@ -375,7 +419,7 @@
     border: none;
     border-radius: 0;
     padding: 0;
-    background: transparent;
+    background: var(--color-transparent);
     align-items: flex-start;
 }
 
@@ -385,7 +429,7 @@
     height: 320px;
     border-radius: 16px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--color-rgba-255-255-255-0-04);
 }
 
 .movieDetailsPoster {
@@ -404,7 +448,7 @@
     inset: 0;
     display: grid;
     place-items: center;
-    background: rgba(0, 0, 0, 0.34);
+    background: var(--color-rgba-0-0-0-0-34);
     opacity: 1;
     transform: scale(1) translateY(0);
     transition:
@@ -416,14 +460,14 @@
 
 .posterLink:hover .posterOverlay,
 .posterLink:focus .posterOverlay {
-    background: rgba(0, 0, 0, 0.42);
+    background: var(--color-rgba-0-0-0-0-42);
 }
 
 .playIcon {
     width: 56px;
     height: 56px;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.48);
+    color: var(--color-ffffff);
+    background: var(--color-rgba-0-0-0-0-48);
     border-radius: 50%;
     padding: 10px;
     transform: scale(0.96);
@@ -447,11 +491,11 @@
     height: 100%;
     display: grid;
     place-items: center;
-    color: #a4aab3;
+    color: var(--color-a4aab3);
 }
 
 .movieDetailsOverview {
-    color: #d1d7e0;
+    color: var(--color-d1d7e0);
     line-height: 1.65;
     margin-top: 10px;
     margin-bottom: 18px;
@@ -459,7 +503,7 @@
 }
 
 .movieDetailsInfo h2 {
-    color: #ffffff;
+    color: var(--color-ffffff);
 }
 
 .movieDetailsInfo {
@@ -467,18 +511,18 @@
 }
 
 .movieTagline {
-    color: #b9c3d1;
+    color: var(--color-b9c3d1);
     font-style: italic;
     margin-bottom: 12px;
 }
 
 .watchTrailerLink {
     display: inline-block;
-    color: #aecdff;
+    color: var(--color-aecdff);
     text-decoration: none;
     padding: 6px 10px;
     border-radius: 8px;
-    background: rgba(10, 30, 60, 0.12);
+    background: var(--color-rgba-10-30-60-0-12);
     margin-bottom: 8px;
 }
 
@@ -495,8 +539,166 @@
 .genreList span {
     padding: 6px 12px;
     border-radius: 999px;
-    background: rgba(0, 80, 167, 0.2);
-    color: #cfe2ff;
+    background: var(--color-rgba-0-80-167-0-2);
+    color: var(--color-cfe2ff);
+}
+
+/* ===== Movie Actions ===== */
+
+.movieDetailsActions {
+    margin-top: 18px;
+}
+
+/* ===== Premium Add Button ===== */
+
+.addToListButton {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 185px;
+    height: 50px;
+    padding-top: 4px;
+    padding-inline: 20px;
+    border-radius: 999px;
+    border: 1px solid var(--color-rgba-255-255-255-0-08);
+    background: linear-gradient(
+        180deg,
+        var(--color-rgba-255-255-255-0-08),
+        var(--color-rgba-255-255-255-0-03)
+    );
+    backdrop-filter: blur(12px);
+    color: var(--color-f4f7fb);
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+        transform 180ms ease,
+        background 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease,
+        color 220ms ease;
+}
+
+/* Glow Layer */
+
+.addToListButton .buttonGlow {
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at top,
+        var(--color-rgba-174-205-255-0-22),
+        var(--color-transparent) 70%
+    );
+
+    opacity: 0;
+    transition: opacity 220ms ease;
+
+    z-index: -1;
+}
+
+/* Hover */
+
+.addToListButton:hover {
+    border-color: var(--color-rgba-174-205-255-0-22);
+
+    box-shadow:
+        0 12px 30px var(--color-rgba-0-0-0-0-32),
+        0 0 0 1px var(--color-rgba-174-205-255-0-04);
+}
+
+.addToListButton:hover .buttonGlow {
+    opacity: 1;
+}
+
+/* Active Press */
+
+.addToListButton:active {
+    transform: scale(0.98);
+}
+
+/* Focus */
+
+.addToListButton:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px var(--color-rgba-174-205-255-0-18),
+        0 10px 24px var(--color-rgba-0-0-0-0-3);
+}
+
+/* ===== Icon ===== */
+
+.buttonIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+
+    transition:
+        transform 220ms ease,
+        color 220ms ease;
+}
+
+.buttonIcon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Icon animation */
+
+.addToListButton:hover .buttonIcon {
+    transform: scale(1.08);
+}
+
+/* ===== Text ===== */
+
+.buttonText {
+    position: relative;
+    top: -1px;
+}
+
+/* ===== Added State ===== */
+
+.addToListButton.in {
+    background: var(--color-transparent);
+    border-color: var(--color-transparent);
+    color: var(--color-ff9cbc);
+}
+
+.addToListButton.in .buttonGlow {
+    opacity: 1;
+
+    background: var(--color-transparent);
+}
+
+.addToListButton.in .buttonIcon {
+    color: var(--color-ff9cbc);
+}
+
+/* Success hover */
+
+.addToListButton.in:hover {
+    border-color: var(--color-rgba-255-122-162-0-42);
+    box-shadow: none;
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 520px) {
+    .addToListButton {
+        width: 100%;
+        min-width: 0;
+    }
 }
 
 @media (max-width: 900px) {
