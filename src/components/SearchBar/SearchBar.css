@@ -5,24 +5,24 @@
     padding: 1.5px 13px;
     width: 100%;
     max-width: 700px;
-    border: 2px solid #525252;
+    border: 2px solid var(--color-525252);
     position: relative;
 }
 .searchBar input {
     padding: 15px 13px 12px;
     border-radius: 5px;
     flex: 1;
-    background-color: transparent;
+    background-color: var(--color-transparent);
     border: none;
-    color: #fff;
+    color: var(--color-fff);
     transition: border-color 0.3s ease;
 }
 .searchBar input::placeholder {
     font-size: 1rem;
-    color: #888;
+    color: var(--color-888);
 }
 .searchBar:focus-within {
-    border-color: #0050a7;
+    border-color: var(--color-0050a7);
 }
 
 .searchBar input:focus {
@@ -41,7 +41,7 @@
 }
 .clear-icon {
     border: none;
-    background: transparent;
+    background: var(--color-transparent);
     width: 20px;
     height: 20px;
     cursor: pointer;

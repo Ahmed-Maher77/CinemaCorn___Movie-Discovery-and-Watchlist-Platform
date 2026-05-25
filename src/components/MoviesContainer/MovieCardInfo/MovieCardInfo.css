@@ -12,14 +12,14 @@
 }
 
 .movieCard-header h3 {
-    color: #ffffff;
+    color: var(--color-ffffff);
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.2;
 }
 
 .movieCard-header span {
     flex-shrink: 0;
-    color: #9fa6b2;
+    color: var(--color-9fa6b2);
     font-size: 0.95rem;
     display: inline-flex;
     align-items: center;
@@ -31,7 +31,7 @@
 }
 
 .movieCard-overview {
-    color: #bcbcbc;
+    color: var(--color-bcbcbc);
     line-height: 1.65;
     font-size: 0.98rem;
     display: -webkit-box;
