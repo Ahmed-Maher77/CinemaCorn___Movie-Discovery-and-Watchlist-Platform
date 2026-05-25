@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const MovieMeta = ({ movie }) => {
@@ -70,6 +71,10 @@ const MovieMeta = ({ movie }) => {
             </span>
         </div>
     );
+};
+
+MovieMeta.propTypes = {
+    movie: PropTypes.object.isRequired,
 };
 
 export default MovieMeta;

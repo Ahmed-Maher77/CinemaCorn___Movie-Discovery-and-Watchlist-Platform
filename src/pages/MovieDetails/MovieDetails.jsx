@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../../components/Header/Header";
 import MovieHero from "./components/MovieHero";
 import MovieDetailsBody from "./components/MovieDetailsBody";
+import MovieDetailsState from "./components/MovieDetailsState";
+import MovieDetailsTopbar from "./components/MovieDetailsTopbar";
 import "./MovieDetails.css";
 
 const MovieDetails = () => {
@@ -59,43 +61,21 @@ const MovieDetails = () => {
             <Header />
 
             <div className="container movieDetailsContainer">
-                <div className="movieDetailsTopbar">
-                    <button
-                        type="button"
-                        onClick={handleBack}
-                        className="backButton"
-                        aria-label="Go back"
-                    >
-                        <svg
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden
-                        >
-                            <path
-                                d="M14.5 5.5a1 1 0 0 1 0 1.414L10.414 11H20a1 1 0 1 1 0 2h-9.586l4.086 4.086a1 1 0 0 1-1.414 1.414l-5.793-5.793a1 1 0 0 1 0-1.414l5.793-5.793a1 1 0 0 1 1.414 0Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                        Back
-                    </button>
-
-                    <nav className="breadcrumb" aria-label="Breadcrumb">
-                        <Link to="/">Home</Link>
-                        <span>/</span>
-                        <span>{movie?.title || "Movie details"}</span>
-                    </nav>
-                </div>
+                <MovieDetailsTopbar
+                    movieTitle={movie?.title}
+                    onBack={handleBack}
+                />
 
                 {isLoading && (
-                    <p className="movieDetailsState">
+                    <MovieDetailsState>
                         Loading movie details...
-                    </p>
+                    </MovieDetailsState>
                 )}
 
                 {!isLoading && error && (
-                    <p className="movieDetailsState error">
+                    <MovieDetailsState isError>
                         Failed to load movie details. Please try again.
-                    </p>
+                    </MovieDetailsState>
                 )}
 
                 {!isLoading && !error && movie && (

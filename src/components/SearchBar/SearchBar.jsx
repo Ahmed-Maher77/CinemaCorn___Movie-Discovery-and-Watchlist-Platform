@@ -1,7 +1,7 @@
+import PropTypes from "prop-types";
 import searchIcon from "../../assets/images/search.svg";
 import xIcon from "../../assets/images/x-icon.svg";
 import "./SearchBar.css";
-
 
 const SearchBar = ({ searchQuery, handleChange }) => {
     return (
@@ -23,12 +23,21 @@ const SearchBar = ({ searchQuery, handleChange }) => {
 
             {/* ======= clear button ======= */}
             {searchQuery && (
-                <button type="button" className="clear-icon" onClick={() => handleChange({ target: { value: "" } })}>
+                <button
+                    type="button"
+                    className="clear-icon"
+                    onClick={() => handleChange({ target: { value: "" } })}
+                >
                     <img src={xIcon} alt="Clear" />
                 </button>
             )}
         </div>
     );
+};
+
+SearchBar.propTypes = {
+    searchQuery: PropTypes.string.isRequired,
+    handleChange: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
