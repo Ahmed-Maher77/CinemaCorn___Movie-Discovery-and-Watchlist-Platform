@@ -1,0 +1,54 @@
+.movieCard-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.movieCard-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.movieCard-header h3 {
+    color: #ffffff;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.2;
+}
+
+.movieCard-header span {
+    flex-shrink: 0;
+    color: #9fa6b2;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.movieCard-header img {
+    width: 18px;
+}
+
+.movieCard-overview {
+    color: #bcbcbc;
+    line-height: 1.65;
+    font-size: 0.98rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+    .movieCard-header {
+        flex-direction: column;
+    }
+
+    .movieCard-overview {
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+}
