@@ -1,0 +1,40 @@
+
+.movieCard-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.movieCard-rating {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.movieCard-rating img {
+    width: 19px;
+}
+
+.movieCard-footer a {
+    color: #1e90ff;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.movieCard-footer a img {
+    width: 18px;
+    transition: transform 0.3s ease;
+}
+
+.movieCard-footer a:hover {
+    opacity: 0.8;
+}
+.movieCard-footer a:hover img {
+    transform: rotate(45deg);
+}
