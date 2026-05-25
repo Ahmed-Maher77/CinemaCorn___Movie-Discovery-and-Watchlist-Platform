@@ -1,0 +1,28 @@
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    max-width: 700px;
+    flex-direction: row-reverse;
+}
+
+.results-count {
+    color: #c9ced7;
+}
+
+@media (min-width: 992px) {
+    .search-container {
+        flex-direction: column;
+    }
+    .search-actions {
+        max-width: 650px;
+    }
+}
