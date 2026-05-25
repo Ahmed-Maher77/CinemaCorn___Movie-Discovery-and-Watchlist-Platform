@@ -3,7 +3,7 @@
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
-    color: #b3b3b3;
+    color: var(--color-b3b3b3);
     font-size: 1.2rem;
     gap: 20px;
     margin-block: 80px 65px;
@@ -12,7 +12,7 @@
 .loading-message .loader {
     width: 35px;
     aspect-ratio: 1;
-    --_g: no-repeat radial-gradient(farthest-side, #a3a3a3 94%, #0000);
+    --_g: no-repeat radial-gradient(farthest-side, var(--color-a3a3a3) 94%, var(--color-0000));
     background:
         var(--_g) 0 0,
         var(--_g) 100% 0,

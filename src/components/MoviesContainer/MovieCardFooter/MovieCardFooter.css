@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-    color: #fff;
+    color: var(--color-fff);
     font-weight: 500;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .movieCard-footer a {
-    color: #1e90ff;
+    color: var(--color-1e90ff);
     font-size: 0.95rem;
     transition: color 0.3s ease;
     display: inline-flex;
