@@ -1,4 +1,5 @@
 import "./MovieCardPoster.css";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const MovieCardPoster = ({ posterUrl, title, id }) => {
@@ -28,6 +29,12 @@ const MovieCardPoster = ({ posterUrl, title, id }) => {
             </Link>
         </figure>
     );
+};
+
+MovieCardPoster.propTypes = {
+    posterUrl: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
 };
 
 export default MovieCardPoster;

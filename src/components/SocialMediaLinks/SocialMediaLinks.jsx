@@ -4,10 +4,22 @@ import githubIcon from "../../assets/images/github.svg";
 import "./SocialMediaLinks.css";
 
 const socialMediaLinks = [
-    { name: "GitHub", url: "https://github.com/ahmed-maher-algohary", icon: githubIcon },
-    { name: "Facebook", url: "https://www.facebook.com/ahmed.maher.algohary", icon: facebookIcon },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/ahmed-maher-algohary", icon: linkedinIcon },
-]
+    {
+        name: "GitHub",
+        url: "https://github.com/ahmed-maher-algohary",
+        icon: githubIcon,
+    },
+    {
+        name: "Facebook",
+        url: "https://www.facebook.com/ahmed.maher.algohary",
+        icon: facebookIcon,
+    },
+    {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/ahmed-maher-algohary",
+        icon: linkedinIcon,
+    },
+];
 
 const SocialMediaLinks = () => {
     return (
