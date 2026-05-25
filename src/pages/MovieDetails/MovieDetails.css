@@ -1,0 +1,524 @@
+.movieDetailsPage {
+    min-height: calc(100vh - 120px);
+}
+
+.movieDetailsContainer {
+    margin-block: 24px 54px;
+}
+
+.movieDetailsTopbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    background: transparent;
+    color: #dce2ea;
+    cursor: pointer;
+}
+
+.movieDetailsTopbar .backButton {
+    flex: 0 0 auto;
+}
+
+.backButton svg {
+    width: 18px;
+    height: 18px;
+}
+
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #9fa6b2;
+}
+
+/* Allow breadcrumb to shrink and ellipsize long titles */
+.movieDetailsTopbar .breadcrumb {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    justify-content: flex-end;
+}
+
+.breadcrumb,
+.breadcrumb a,
+.breadcrumb span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.breadcrumb a {
+    color: #dce2ea;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: none;
+}
+
+.breadcrumb a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.28s ease;
+}
+
+.breadcrumb a:hover::before {
+    width: 100%;
+}
+
+.movieDetailsState {
+    color: #c9ced7;
+    margin-top: 24px;
+}
+
+.movieDetailsState.error {
+    color: #ff9a9a;
+}
+
+.movieHero {
+    min-height: 360px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    /* box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28); */
+}
+
+.movieHeroLayer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+    background: linear-gradient(
+        180deg,
+        rgba(4, 8, 14, 0.15) 12%,
+        rgba(4, 8, 14, 0.86) 68%,
+        rgba(4, 8, 14, 0.96) 100%
+    );
+}
+
+.movieHeroLabel {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #aeb7c4;
+    font-size: 0.78rem;
+    margin-bottom: 8px;
+}
+
+.movieHero h1 {
+    color: #ffffff;
+    font-size: clamp(1.7rem, 3.2vw, 2.8rem);
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.movieHeroTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.movieHeroTags .genreChip {
+    font-size: 0.82rem;
+    border-radius: 999px;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.releaseStatus {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #aeb7c4;
+    font-size: 0.86rem;
+}
+
+.releaseStatus .releaseIcon {
+    width: 14px;
+    height: 14px;
+    color: #aecdff;
+    flex-shrink: 0;
+}
+
+/* Top-right status badge inside hero */
+.releaseStatusTop {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    right: auto;
+    z-index: 5;
+    background: transparent;
+    padding: 4px 6px;
+}
+
+/* Watchlist button top-right */
+
+.watchlistButtonTop {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    z-index: 6;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #dce2ea;
+    border: none;
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.12s ease;
+}
+
+.watchlistButtonTop svg {
+    width: 30px;
+    height: 30px;
+}
+
+.watchlistButtonTop:hover {
+    transform: scale(1.1);
+}
+
+.watchlistButtonTop.active {
+    color: #ff7aa2;
+    border-color: rgba(255, 122, 162, 0.28);
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(255, 122, 162, 0.08);
+}
+
+.watchlistButtonTop.active svg {
+    fill: currentColor;
+}
+
+/* Outline by default: use stroke; filled when active */
+.watchlistButtonTop svg path {
+    /* Render filled by default */
+    fill: currentColor;
+    stroke: none;
+}
+
+.watchlistButtonTop.active svg path {
+    /* Active uses accent color (inherited via currentColor) */
+    fill: currentColor;
+    stroke: none;
+}
+
+.watchlistToast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 30;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 220px;
+    max-width: min(360px, calc(100vw - 40px));
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(174, 183, 196, 0.16);
+    background: linear-gradient(
+        145deg,
+        rgba(18, 22, 28, 0.98),
+        rgba(28, 33, 40, 0.98)
+    );
+    color: #eaf3ff;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.34);
+    font-size: 0.94rem;
+    line-height: 1.35;
+    animation: watchlistToastIn 220ms ease-out;
+}
+
+.watchlistToastIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    color: #2de38b;
+}
+
+.watchlistToastIcon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.watchlistToast.error {
+    color: #ffe0e0;
+    border-color: rgba(255, 122, 162, 0.22);
+    background: linear-gradient(
+        145deg,
+        rgba(40, 18, 24, 0.98),
+        rgba(52, 22, 30, 0.98)
+    );
+}
+
+.watchlistToast.error .watchlistToastIcon {
+    color: #ff6b8d;
+}
+
+@keyframes watchlistToastIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px) translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .releaseStatusTop {
+        position: static;
+        margin-bottom: 8px;
+        order: -1;
+    }
+    .watchlistButtonTop {
+        position: static;
+        margin-left: auto;
+        order: 0;
+    }
+
+    .watchlistToast {
+        top: 16px;
+        right: 16px;
+        left: 16px;
+        max-width: none;
+        min-width: 0;
+    }
+}
+
+.movieHeroRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.movieHeroMeta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.movieHeroTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.movieMetaItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    position: relative;
+    color: #d7dee8;
+    font-size: 0.93rem;
+}
+
+.movieMetaItem:not(:last-child)::after {
+    content: "";
+    width: 1px;
+    height: 12px;
+    background: rgba(174, 183, 196, 0.45);
+    margin-left: 8px;
+}
+
+.movieMetaIcon {
+    width: 14px;
+    height: 14px;
+    color: #aecdff;
+    flex-shrink: 0;
+}
+
+.movieDetailsBody {
+    margin-top: 35px;
+    display: flex;
+    gap: 24px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    align-items: flex-start;
+}
+
+.movieDetailsPoster {
+    width: 240px;
+    min-width: 240px;
+    height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.movieDetailsPoster {
+    position: relative;
+}
+
+.movieDetailsPoster .posterLink {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.posterOverlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.34);
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition:
+        opacity 220ms ease,
+        transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 220ms ease;
+    will-change: opacity, transform;
+}
+
+.posterLink:hover .posterOverlay,
+.posterLink:focus .posterOverlay {
+    background: rgba(0, 0, 0, 0.42);
+}
+
+.playIcon {
+    width: 56px;
+    height: 56px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.48);
+    border-radius: 50%;
+    padding: 10px;
+    transform: scale(0.96);
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.posterLink:hover .playIcon,
+.posterLink:focus .playIcon {
+    transform: scale(1);
+}
+
+.movieDetailsPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.movieDetailsPosterPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: #a4aab3;
+}
+
+.movieDetailsOverview {
+    color: #d1d7e0;
+    line-height: 1.65;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    max-width: 72ch;
+}
+
+.movieDetailsInfo h2 {
+    color: #ffffff;
+}
+
+.movieDetailsInfo {
+    padding-top: 6px;
+}
+
+.movieTagline {
+    color: #b9c3d1;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.watchTrailerLink {
+    display: inline-block;
+    color: #aecdff;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(10, 30, 60, 0.12);
+    margin-bottom: 8px;
+}
+
+.watchTrailerLink:hover {
+    text-decoration: underline;
+}
+
+.genreList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.genreList span {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(0, 80, 167, 0.2);
+    color: #cfe2ff;
+}
+
+@media (max-width: 900px) {
+    .movieHero {
+        min-height: 300px;
+    }
+
+    .movieHeroLayer {
+        padding: 22px;
+    }
+
+    .movieDetailsBody {
+        flex-direction: column;
+    }
+
+    .movieDetailsPoster {
+        width: 100%;
+        min-width: 100%;
+        height: 380px;
+    }
+
+    .movieDetailsInfo {
+        padding: 2px;
+    }
+}
