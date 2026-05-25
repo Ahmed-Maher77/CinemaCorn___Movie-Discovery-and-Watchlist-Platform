@@ -8,9 +8,9 @@
   justify-content: center;
   gap: 14px;
   background:
-    radial-gradient(circle at top, rgba(255, 107, 1, 0.18), transparent 38%),
-    radial-gradient(circle at bottom, rgba(30, 144, 255, 0.12), transparent 34%),
-    rgba(33, 37, 41, 0.94);
+    radial-gradient(circle at top, var(--color-rgba-255-107-1-0-18), var(--color-transparent) 38%),
+    radial-gradient(circle at bottom, var(--color-rgba-30-144-255-0-12), var(--color-transparent) 34%),
+    var(--color-rgba-33-37-41-0-94);
   backdrop-filter: blur(8px);
   opacity: 1;
   transition: opacity 220ms ease;
@@ -23,7 +23,7 @@
 .globalInitialLoader {
   width: 50px;
   aspect-ratio: 1;
-  --_c: no-repeat radial-gradient(farthest-side, #ff6b01 92%, #0000);
+  --_c: no-repeat radial-gradient(farthest-side, var(--color-ff6b01) 92%, var(--color-0000));
   background:
     var(--_c) top,
     var(--_c) left,
@@ -31,15 +31,15 @@
     var(--_c) bottom;
   background-size: 12px 12px;
   animation: globalInitialLoaderSpin 1s infinite;
-  filter: drop-shadow(0 0 14px rgba(255, 107, 1, 0.25));
+  filter: drop-shadow(0 0 14px var(--color-rgba-255-107-1-0-25));
 }
 
 .globalInitialLoaderText {
-  color: #ffffff;
+  color: var(--color-ffffff);
   font-size: 0.98rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 12px var(--color-rgba-0-0-0-0-35);
 }
 
 @keyframes globalInitialLoaderSpin {

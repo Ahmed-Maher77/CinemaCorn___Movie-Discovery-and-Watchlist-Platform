@@ -7,7 +7,7 @@
     justify-content: space-between;
     align-items: center;
     padding-block: 20px;
-    color: white;
+    color: var(--color-white);
     gap: 16px;
 }
 
@@ -30,9 +30,9 @@
     gap: 8px;
     padding: 10px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(174, 183, 196, 0.18);
-    background: rgba(255, 255, 255, 0.04);
-    color: #eaf3ff;
+    border: 1px solid var(--color-rgba-174-183-196-0-18);
+    background: var(--color-rgba-255-255-255-0-04);
+    color: var(--color-eaf3ff);
     font-size: 0.92rem;
     text-decoration: none;
     transition:
@@ -47,8 +47,8 @@
 }
 
 .headerWatchlistLink:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(174, 183, 196, 0.28);
+    background: var(--color-rgba-255-255-255-0-08);
+    border-color: var(--color-rgba-174-183-196-0-28);
 }
 
 @media (max-width: 640px) {
@@ -75,7 +75,7 @@
     margin-block: 30px 40px;
 }
 .search-container span {
-    color: #b3b3b3;
+    color: var(--color-b3b3b3);
 }
 
 @media (max-width: 991.9px) {

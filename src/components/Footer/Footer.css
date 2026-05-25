@@ -1,6 +1,6 @@
 .footer {
     background-color: var(--secondary-bg-color);
-    color: #c9ced7;
+    color: var(--color-c9ced7);
     padding: 30px 0;
     margin-top: 50px;
 }
@@ -20,12 +20,12 @@
 }
 
 .footer-bottom {
-    color: #9fa6b2;
+    color: var(--color-9fa6b2);
     /* text-align: center; */
 }
 
 .footer-bottom a {
-    color: #ffffff;
+    color: var(--color-ffffff);
     font-weight: 600;
     position: relative;
     display: inline-block;

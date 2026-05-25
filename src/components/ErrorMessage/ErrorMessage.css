@@ -15,5 +15,5 @@
     max-width: 530px;
     margin-inline: auto;
     line-height: 1.4;
-    color: #ff4d4d;
+    color: var(--color-ff4d4d);
 }
